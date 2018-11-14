@@ -1,4 +1,4 @@
-from kwe.keyword_graph import TKGExtractor
+from KeywordExtraction.keyword_graph import TKGExtractor
 
 
 class KWEServiceResponse:
