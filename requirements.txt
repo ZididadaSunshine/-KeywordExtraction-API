@@ -2,3 +2,4 @@ flask
 flask-script
 flask-restplus
 flask_testing
+https://github.com/ZididadaSunshine/KeywordExtraction/releases/download/1.0/kwe-1.0.tar.gz
