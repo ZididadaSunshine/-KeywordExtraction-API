@@ -14,7 +14,7 @@ def auth_required(func):
         key = request.headers['Authorization']
 
         # Check key validity
-        if key != os.environ['API_KEY']):
+        if key != os.environ['API_KEY']:
             api.abort(401, 'Invalid API key')
 
         return func(*args, **kwargs)
