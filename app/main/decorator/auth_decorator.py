@@ -1,3 +1,4 @@
+import os
 from flask import request
 from app.main.dto.kwe_dto import KWEDTO
 
@@ -13,7 +14,7 @@ def auth_required(func):
         key = request.headers['Authorization']
 
         # Check key validity
-        if key != "anders":
+        if key != os.environ['API_KEY']):
             api.abort(401, 'Invalid API key')
 
         return func(*args, **kwargs)
