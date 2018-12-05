@@ -2,6 +2,9 @@ import unittest
 from flask_script import Manager
 from app import blueprint
 from app.main import create_app
+from KeywordExtraction.KeywordExtraction.preprocessing.text_preprocessing import setup
+
+setup()
 
 app = create_app('dev')
 app.register_blueprint(blueprint)
