@@ -1,2 +1,4 @@
-from KeywordExtraction.preprocessing.text_preprocessing import setup
-setup()
+from nltk import download
+download('averaged_perceptron_tagger')
+download('punkt')
+download('stopwords')
