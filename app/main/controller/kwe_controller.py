@@ -10,14 +10,14 @@ api = KWEDTO.api
 
 @api.route('')
 class KWEResource(Resource):
-    @api.response(KWEServiceResponse.Success, 'Successfully extracted keywords')
-    @api.response(KWEServiceResponse.Error, 'An error occurred')
-    @api.doc('Extract Keywords', security='key')
+    @api.response(KWEServiceResponse.Success, 'Successfully extracted keywords.')
+    @api.response(KWEServiceResponse.Error, 'An error occurred.')
+    @api.doc('Extract keywords from a list of posts.', security='key')
     @api.expect(KWEDTO.extract_keywords, validate=True)
     @auth_required
     def post(self):
         data = request.json
-        if not data or not data['text'] or 'text' not in data:
-            return dict(message='Invalid text input.'), KWEServiceResponse.Error
+        if not data or not data['posts']:
+            return dict(message='Invalid posts input.'), KWEServiceResponse.Error
         else:
-            return extract_keywords(data['text'])
+            return extract_keywords(data['posts'])
