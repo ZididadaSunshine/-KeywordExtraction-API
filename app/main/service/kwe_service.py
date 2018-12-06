@@ -10,5 +10,5 @@ def extract_keywords(data):
     if not data or 'text' not in data:
         return KWEServiceResponse.Error
     else:
-        extractor = TKGExtractor(data['text'].split('\n'))
+        extractor = TKGExtractor(data['text'])
         return dict(keywords=extractor.extract_n_keywords(n=15)), KWEServiceResponse.Success
