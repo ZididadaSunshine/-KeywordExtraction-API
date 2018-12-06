@@ -16,4 +16,8 @@ class KWEResource(Resource):
     @api.expect(KWEDTO.extract_keywords, validate=True)
     @auth_required
     def post(self):
-        return extract_keywords(request.json)
+        data = request.json
+        if not data or not data['text'] or 'text' not in data:
+            return dict(message='Invalid text input.'), 400
+        else:
+            return extract_keywords(data['text'])
