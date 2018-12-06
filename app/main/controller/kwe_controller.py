@@ -2,7 +2,7 @@ from flask import request
 from flask_restplus import Resource
 
 from app.main.dto.kwe_dto import KWEDTO
-from app.main.service.kwe_service import KWEServiceResponse, extract_keywords
+from app.main.service.kwe_service import extract_keywords
 from app.main.decorator.auth_decorator import auth_required
 
 api = KWEDTO.api
