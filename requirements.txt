@@ -2,5 +2,4 @@ flask
 flask-script
 flask-restplus
 flask_testing
-#https://github.com/ZididadaSunshine/KeywordExtraction/tarball/master
-https://github.com/ZididadaSunshine/KeywordExtraction/archive/1.1.2a.tar.gz
+https://github.com/ZididadaSunshine/KeywordExtraction/tarball/master
