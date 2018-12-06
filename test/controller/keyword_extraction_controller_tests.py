@@ -1,6 +1,7 @@
 from unittest import main
-from app.test.base import BaseTestCase
 from flask import json
+
+from test.base.base import BaseTestCase
 
 
 class KeywordExtractionControllerTest(BaseTestCase):

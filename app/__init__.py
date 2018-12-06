@@ -5,7 +5,7 @@ from app.main.controller.kwe_controller import api as kwe_namespace
 
 blueprint = Blueprint('sw7-keyword-extraction-api', __name__)
 
-api = Api(blueprint, title='SW7 Keyword Extraction API', version='1.0',
+api = Api(blueprint, title='SentiCloud Keyword Extraction', version='1.0',
           authorizations={'key': {'type': 'apiKey', 'in': 'header', 'name': 'Authorization'}})
 
 # Add namespaces to API

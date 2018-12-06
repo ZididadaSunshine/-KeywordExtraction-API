@@ -1,6 +1,6 @@
 from unittest import main
-from app.test.base import BaseTestCase
 from app.main.service.kwe_service import extract_keywords
+from test.base.base import BaseTestCase
 
 
 class KeywordExtractionServiceTest(BaseTestCase):
