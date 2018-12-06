@@ -2,7 +2,7 @@ from flask import request
 from flask_restplus import Resource
 
 from app.main.dto.kwe_dto import KWEDTO
-from app.main.service.kwe_service import extract_keywords
+from app.main.service.kwe_service import KWEServiceResponse, extract_keywords
 from app.main.decorator.auth_decorator import auth_required
 
 api = KWEDTO.api
@@ -18,6 +18,6 @@ class KWEResource(Resource):
     def post(self):
         data = request.json
         if not data or not data['text'] or 'text' not in data:
-            return dict(message='Invalid text input.'), 400
+            return dict(message='Invalid text input.'), KWEServiceResponse.Error
         else:
             return extract_keywords(data['text'])

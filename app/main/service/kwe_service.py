@@ -1,6 +1,11 @@
 from KeywordExtraction.keyword_graph import TKGExtractor
 
 
+class KWEServiceResponse:
+    Success = 200
+    Error = 400
+
+
 def extract_keywords(corpus):
     print("Recieved data: ")
     print(f"----\n{corpus}\n----")
