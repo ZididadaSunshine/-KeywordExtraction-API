@@ -10,16 +10,16 @@ class KeywordExtractionControllerTest(BaseTestCase):
 
     def test_auth_success(self):
         response = self.test_client.post('/',
-                                         data=json.dumps(dict(text='I really like this text! It is very nice')),
+                                         json=dict(posts=['I really like this text! It is very nice']),
                                          content_type='application/json',
                                          headers={'Authorization': 'anders'})
 
         self.assert200(response)
-        self.assertEquals(set(response.json['keywords']), {'nice', 'text', 'really', 'like'})
+        self.assertEquals(set(response.json['keywords']), {'nice'})
 
     def test_auth_invalid(self):
         response = self.test_client.post('/',
-                                         data=json.dumps(dict(text='I really like this text! It is very nice')),
+                                         json=dict(posts=['I really like this text! It is very nice']),
                                          content_type='application/json',
                                          headers={'Authorization': '...'})
 
@@ -28,7 +28,7 @@ class KeywordExtractionControllerTest(BaseTestCase):
 
     def test_auth_none(self):
         response = self.test_client.post('/',
-                                         data=json.dumps(dict(text='I really like this text! It is very nice')),
+                                         json=dict(posts=['I really like this text! It is very nice']),
                                          content_type='application/json')
 
         self.assert401(response)

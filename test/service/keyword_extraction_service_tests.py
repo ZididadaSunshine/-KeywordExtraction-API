@@ -5,15 +5,15 @@ from test.base.base import BaseTestCase
 
 class KeywordExtractionServiceTest(BaseTestCase):
     def test_kwe_service_success(self):
-        result = extract_keywords(dict(text='I really like this text! It is very nice'))
+        response, code = extract_keywords(['I really like this text! It is very nice'])
 
-        self.assertEquals(result[1], 200)
-        self.assertEquals(set(result[0]['keywords']), {'nice', 'text', 'really', 'like'})
+        self.assertEquals(code, 200)
+        self.assertEquals(set(response['keywords']), {'nice'})
 
     def test_kwe_service_error(self):
-        result = extract_keywords(dict())
+        result, code = extract_keywords([])
 
-        self.assertEquals(result, 400)
+        self.assertEquals(code, 400)
 
 
 if __name__ == "__main__":
